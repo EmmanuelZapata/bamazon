@@ -19,3 +19,10 @@ var connection = mysql.createConnection({
     database: "bamazon"
   });
   
+
+  // Throw an error if things are not connected
+  
+  connection.connect(function(err){
+    if(err)throw err;
+    console.log("connected as id" + connection.threadId);
+  });
