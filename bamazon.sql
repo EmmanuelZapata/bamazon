@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS bamazon;
 CREATE DATABASE bamazon;
 USE bamazon;
@@ -24,12 +23,12 @@ values ('Marantz SR5012','Reciever','648.88','560');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
 values ('Marantz SR6012','Reciever','799.99','60');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('LG OLED65C8PUA','TV','2,796.99','12');
+values ('LG OLED65C8PUA','TV','2796.99','12');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
 values ('Tuft and Needle','Mattress','750.00','790');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Audio R8','Car','150,000.00','1');
+values ('Audio R8','Car','150000.00','1');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Gulfstream G650ER','Airplane','65,000,000.00','20');
+values ('Gulfstream G650ER','Airplane','65000000.00','20');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Tesla Model X','Car','110,000.00','32');
+values ('Tesla Model X','Car','110000.00','32');
