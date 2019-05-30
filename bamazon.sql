@@ -14,22 +14,22 @@ CREATE TABLE products(
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
 values ('Q Acoustics 3020i','Speakers','299.99','320');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Q Acoustics 3050i','Speakers','699.99','69');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Q Acoustics Concept 500','Speakers','5000.19','20');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Q Acoustics 3090ci','Speakers','189.29','182');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Marantz SR5012','Reciever','648.88','560');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Marantz SR6012','Reciever','799.99','60');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('LG OLED65C8PUA','TV','2,796.99','12');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Tuft and Needle','Mattress','750.00','790');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Audio R8','Car','150,000.00','1');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Gulfstream G650ER','Airplane','65,000,000.00','20');
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('Q Acoustics 3020i','Speakers','299.99','320');
+values ('Tesla Model X','Car','110,000.00','32');
