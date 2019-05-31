@@ -36,8 +36,62 @@ showList();
     }
     console.log(list.toString() + "\n" + "\n")
   })
-  setTimeout(buyWhat, 100);
+  setTimeout(stuffWant, 100);
  
 });
 }
 
+//the let me get my stuff you bastard
+
+function stuffWant (){
+inquirer.prompt([
+{
+type: "input",
+name: "id",
+message: "Please enter the Item ID of what you want to buy?"
+},
+{
+type: "input",
+name: "howmany",
+message: "How much more crap would you like to buy?"
+}
+]).then(function (input) {
+
+  var item = input.id;
+  var howmany = input.howmany;
+
+
+//finds item based on id of item from DB.  Connects as well and looks for errors to throw.
+var findStuff = "SELECT * FROM products WHERE ?";
+connection.query(findStuff, { id: item }, function (err, res) {
+if (err) throw err;
+
+//if the returned has no length we know that no item was found on the list
+if (res.length === 0) {
+console.log("\nYou choose poorly choose again!\n");
+// run the function again for choice
+stuffWant();
+}
+
+else if (howmany <= res[0].stock_quantity) {
+var selectedProduct = res[0];
+connection.query(
+"UPDATE products SET ? Where ?",
+[{stock_quantity: res[0].stock_quantity - howmany},{id: item}],
+
+function (err, res) {
+if (err) throw err;
+console.log("\n"+"You bought more stuff and now are broke after spending $"+ selectedProduct.price * howmany +" you fool!" +"\n");
+console.log(list.toString() + "\n" + "\n");
+stuffWant();
+})
+}
+else {
+console.log("\n" + "Sorry, we are sold out. Buy something else!" + "\n");
+console.log(list.toString() + "\n" + "\n");
+stuffWant();
+}
+}
+)
+})
+}
