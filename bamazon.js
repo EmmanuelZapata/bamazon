@@ -42,7 +42,7 @@ showList();
 
 }
 function printList(){
-  console.log(list.toString() + "\n" + "\n")
+  console.log((chalk.bgGreen)(list.toString() + "\n" + "\n"));
 }
 //Do you want to continue to spending that hard earned money?
 
@@ -55,8 +55,8 @@ function wantMore(){
     }
   ]).then(function (confirm){
     if (confirm.wantitall) {
-      setTimeout(printList, 3000);
-      setTimeout(stuffWant, 3001);
+      setTimeout(printList, 1000);
+      setTimeout(stuffWant, 1001);
     }
     else {
       console.log('\n' + '\x1b[32m', 'Thanks for spending that moola goodbye!' + '\n'); 
@@ -117,7 +117,6 @@ console.log(list.toString() + "\n" + "\n");
 setTimeout(printList, 3000);
 setTimeout(stuffWant, 3001);
 }
-}
-)
-})
+});
+});
 }
