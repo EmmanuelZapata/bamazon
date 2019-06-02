@@ -1,6 +1,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var Table = require("cli-table");
+const chalk = require('chalk');
 
 //Different name than npm needed
 var list;
@@ -34,8 +35,8 @@ showList();
     for(var i = 0; i < res.length; i++){
       list.push([res[i].id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity]);
     }
-    console.log(list.toString() + "\n" + "\n")
-  })
+    console.log((chalk.bgGreen)(list.toString() + "\n" + "\n"));
+  });
   setTimeout(stuffWant, 100);
 });
 
@@ -89,7 +90,7 @@ var findStuff = "SELECT * FROM products WHERE ?";
 connection.query(findStuff, { id: item }, function (err, res) {
 if (err) throw err;
 
-//if the returned has no length we know that no item was found on the list
+//if the returned has no length means no item was found
 if (res.length === 0) {
 console.log("\nYou choose poorly choose again!\n");
 // run the function again for choice
