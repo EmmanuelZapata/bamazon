@@ -113,7 +113,7 @@ wantMore();
 }
 else {
 console.log("\n" + "Sorry, we are sold out. Buy something else!" + "\n");
-console.log(list.toString() + "\n" + "\n");
+console.log((chalk.bgBlue)(list.toString() + "\n" + "\n"));
 setTimeout(printList, 3000);
 setTimeout(stuffWant, 3001);
 }

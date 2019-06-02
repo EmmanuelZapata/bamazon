@@ -38,3 +38,5 @@ This means updating the SQL database to reflect the remaining quantity.
 Once the update goes through, show the customer the total cost of their purchase.
 
 ## Video of it at work!
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/eVZNQk80mQE/0.jpg)](https://youtu.be/eVZNQk80mQE)
