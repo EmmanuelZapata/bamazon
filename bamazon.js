@@ -37,13 +37,36 @@ showList();
     console.log(list.toString() + "\n" + "\n")
   })
   setTimeout(stuffWant, 100);
- 
 });
-}
 
+}
+function printList(){
+  console.log(list.toString() + "\n" + "\n")
+}
+//Do you want to continue to spending that hard earned money?
+
+function wantMore(){
+  inquirer.prompt([
+    {
+      type: "confirm",
+      name: "wantitall",
+      message: "\x1b[1m" + "\x1b[33m" + "Do you want to continue buying stuff or not?"
+    }
+  ]).then(function (confirm){
+    if (confirm.wantitall) {
+      setTimeout(printList, 3000);
+      setTimeout(stuffWant, 3001);
+    }
+    else {
+      console.log('\n' + '\x1b[32m', 'Thanks for spending that moola goodbye!' + '\n'); 
+      process.exit();
+    }
+  })
+
+}
 //the let me get my stuff you bastard
 
-function stuffWant (){
+function stuffWant(){
 inquirer.prompt([
 {
 type: "input",
@@ -82,14 +105,16 @@ connection.query(
 function (err, res) {
 if (err) throw err;
 console.log("\n"+"You bought more stuff and now are broke after spending $"+ selectedProduct.price * howmany +" you fool!" +"\n");
-console.log(list.toString() + "\n" + "\n");
-stuffWant();
+wantMore();
+// setTimeout(printList, 3000);
+// setTimeout(stuffWant, 3001);
 })
 }
 else {
 console.log("\n" + "Sorry, we are sold out. Buy something else!" + "\n");
 console.log(list.toString() + "\n" + "\n");
-stuffWant();
+setTimeout(printList, 3000);
+setTimeout(stuffWant, 3001);
 }
 }
 )
